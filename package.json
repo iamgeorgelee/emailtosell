@@ -1,0 +1,29 @@
+{
+  "name": "node-js-getting-started",
+  "version": "0.1.4",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ebay-api": "^0.1.1",
+    "ejs": "^2.3.1",
+    "express": "~4.9.x",
+    "mail-listener2": "^0.1.8",
+    "mailin": "^3.0.1"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
