@@ -11,7 +11,8 @@
     "ejs": "^2.3.1",
     "express": "~4.9.x",
     "mail-listener2": "^0.1.8",
-    "mailin": "^3.0.1"
+    "mailin": "^3.0.1",
+    "underscore": "^1.8.3"
   },
   "engines": {
     "node": "0.12.2"

@@ -1,36 +1,19 @@
-# node-js-getting-started
+Account information:
+Test gmail account:selling.ebay.via.email@gmail.com
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+So far, you can download the code and run it locally. After the service starts up, the service will listen to the gmail account.
+(but not sure if will work on your side, since I have fix a bug in an open-source dependency )
+So you can:
+Start an email with  subject “Selling”
+Put an ISBN number (for book) in the text file, and send to the gmail account
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+Example: I want to sell ISBN 12345 for 50 dollars, verygood.
 
-## Running Locally
+The service will get the latest email, and post the listing of that book on sandbox ebay (example: http://cgi.sandbox.ebay.com/ws/eBayISAPI.dll?ViewItem&item=110166388234&ssPageName=ADME:L:LCA:US:1123#ht_500wt_1156)
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+The next part will be sending and parsing the richer email context. So far I only have the ISBN number for input and other params fixed for making the end-to-end test flow easier. Ideally user can put more meaningful thing in the payload.  And I will also be working on putting this service to Heroku, will keep you guys updated.
 
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+References:
+Ebay api in node: https://github.com/benbuckman/nodejs-ebay-api
+Add item api: http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/AddItem.html
+Email receiving in node: https://github.com/chirag04/mail-listener2

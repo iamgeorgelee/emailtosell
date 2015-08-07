@@ -38,7 +38,27 @@ mailListener.on("mail", function(mail, seqno, attributes){
   // mail processing code goes here
   
   if(mail.headers.subject.substring(0, 7) === 'Selling'){
-      listing.addItem(mail.text);
+
+
+
+        try{
+          //a=JSON.parse(mail.text.replace(/(\r\n|\n|\r)/gm,""));
+
+                  var content = mail.text.split(" ");
+            // I want to sell ISBN 123 for 500 dollars, verygood
+            var a = {};
+            a.startPrice = content[7];
+            a.type = content[4];
+            a.typeInfo = content[5]
+            a.description = content[9];
+          
+          a.userEmail = mail.from[0].address;
+
+        }catch(e){
+            console.log(e); //error in the above string(in this case,yes)!
+        }
+        listing.addItem(a);
+      
   } else {
 
     console.log('non-selling email coming in')
